@@ -1,12 +1,14 @@
 import React from 'react';
-import Button from './components/Button'
+import Header from './components/Header'
+import SearchBar from './components/SearchBar'
 
 function App() {
   return (
     <div className="text-center bg-stone-100 min-h-screen w-full">
-      <Button variant="primary" buttonText={"primary"}></Button>
-      <Button variant="secondary" buttonText={"secondary"}></Button>
-      <Button buttonText={"disabled"} disabled={true}></Button>
+      <Header></Header>
+      <div className="p-36 flex flex-row justify-center">
+        <SearchBar></SearchBar>
+      </div>
     </div>
   );
 }
