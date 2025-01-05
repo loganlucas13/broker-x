@@ -1,13 +1,17 @@
 import React from 'react';
-import Header from './components/Header'
-import SearchBar from './components/SearchBar'
+import Header from './components/Header';
+import SearchBar from './components/SearchBar';
+import StockList from './components/StockList';
 
 function App() {
   return (
     <div className="text-center bg-stone-100 min-h-screen w-full">
       <Header></Header>
-      <div className="p-36 flex flex-row justify-center">
+      <div className="pt-36 pb-12 flex justify-center">
         <SearchBar></SearchBar>
+      </div>
+      <div className="flex justify-center">
+        <StockList></StockList>
       </div>
     </div>
   );

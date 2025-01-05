@@ -1,19 +1,19 @@
 import React from 'react';
 
-// REQUIRED: 'buttonText'
+// REQUIRED: 'children'
 // OPTIONAL: 'variant': (defaults to 'primary')
 // OPTIONAL: 'onClick': (defaults to 'void')
 // OPTIONAL: 'disabled': (defaults to 'false' - not disabled)
 type ButtonProperties = {
-    variant?: 'primary' | 'secondary' | 'text';
-    buttonText: React.ReactNode;
+    variant?: 'primary' | 'secondary' | 'text' | 'icon';
+    children: React.ReactNode;
     onClick?: () => void;
     disabled?: boolean;
 }
 
 const Button: React.FC<ButtonProperties> = ({
     variant = 'primary',
-    buttonText,
+    children,
     onClick,
     disabled = false
 }) => {
@@ -25,7 +25,8 @@ const Button: React.FC<ButtonProperties> = ({
     const variantStyling = {
         primary: "bg-rose-400 text-rose-50 hover:text-rose-400 hover:bg-rose-300",
         secondary: "bg-rose-100 text-rose-400 hover:text-rose-500 hover:bg-rose-200",
-        text: "text-rose-400 font-medium decoration-2 shadow-none hover:underline"
+        text: "text-rose-400 font-medium decoration-2 shadow-none hover:underline",
+        icon: "shadow-none"
     }
     const selectedVariantStyling = variantStyling[variant];
 
@@ -33,15 +34,33 @@ const Button: React.FC<ButtonProperties> = ({
         ? "opacity-50 cursor-not-allowed"
         : "";
 
-    return (
-        <button
-            className={`${defaultStyling} ${selectedVariantStyling} ${disabledStyling}`}
-            onClick={onClick}
-            disabled={disabled}
-        >
-            {buttonText}
-        </button>
-    )
+    if (variant !== "icon") {
+        return (
+            <button
+                className={`${defaultStyling} ${selectedVariantStyling} ${disabledStyling}`}
+                onClick={onClick}
+                disabled={disabled}
+            >
+                {children}
+            </button>
+        );
+    }
+    else {
+        return (
+            <button
+                className={`${selectedVariantStyling} ${disabledStyling}`}
+                onClick={onClick}
+                disabled={disabled}
+            >
+                <img
+                    className="w-10"
+                    src={`${children}`}
+                    alt="icon"
+                >
+                </img>
+            </button>
+        );
+    }
 }
 
 export default Button;
