@@ -8,8 +8,8 @@ function Header() {
         <div className="flex justify-between items-center px-24 py-4 bg-rose-50 rounded-b-3xl shadow-sm">
             <Logo variant="background"></Logo>
             <div className="flex items-center gap-6">
-                <Button variant="primary" children="FAQ"></Button>
-                <Button variant="icon" children={githubLogo}></Button>
+                <Button variant="primary" children="FAQ" to="faq"></Button>
+                <Button variant="icon" children={githubLogo} external="https://github.com/loganlucas13/broker-x"></Button>
             </div>
         </div>
     );
