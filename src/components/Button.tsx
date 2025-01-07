@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 // OPTIONAL: 'external': (for external routing - ex. GitHub repository)
 type ButtonProperties = {
     variant?: 'primary' | 'secondary' | 'text' | 'icon';
-    children: React.ReactNode;
+    children?: React.ReactNode;
     onClick?: () => void;
     disabled?: boolean;
     to?: string;

@@ -9,7 +9,6 @@ type LogoProperties = {
 const Logo: React.FC<LogoProperties> = ({
     variant = 'background'
 }) => {
-
     const defaultStyling = "flex flex-row items-center";
 
     // all available variant styles
