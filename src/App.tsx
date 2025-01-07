@@ -1,19 +1,16 @@
 import React from 'react';
-import Header from './components/Header';
-import SearchBar from './components/SearchBar';
-import StockList from './components/StockList';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import FAQ from './components/FAQ';
 
 function App() {
     return (
-        <div className="text-center bg-stone-100 min-h-screen w-full">
-            <Header></Header>
-            <div className="pt-24 pb-12 flex justify-center">
-                <SearchBar></SearchBar>
-            </div>
-            <div className="flex justify-center">
-                <StockList></StockList>
-            </div>
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<Home></Home>}></Route>
+                <Route path='/faq' element={<FAQ></FAQ>}></Route>
+            </Routes>
+        </BrowserRouter>
     );
 }
 
