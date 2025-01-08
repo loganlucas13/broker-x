@@ -6,37 +6,48 @@ type BulletListEntryProperties = {
     title: string;
     description?: string; // optional - intended use for the FAQ list
     children?: React.ReactNode;
-}
+};
 
 const BulletListEntry: React.FC<BulletListEntryProperties> = ({
     variant = 'primary',
     title,
-    description
+    description,
 }) => {
-
     const [isDescriptionVisible, setIsDescriptionVisible] = useState(false);
 
     const divVariantStyling = {
-        'primary': "flex flex-col items-center text-rose-400",
-    }
+        primary: 'flex flex-col items-center text-rose-400',
+    };
     const selectedDivVariantStyling = divVariantStyling[variant];
 
     const titleVariantStyling = {
-        'primary': "flex justify-between items-center px-4 py-2 border-2 border-rose-400 rounded-full gap-10 bg-stone-100 font-semibold w-full z-10 hover:bg-rose-100 hover:cursor-pointer hover:underline hover:decoration-2 hover:decoration-dotted hover:underline-offset-8",
-    }
+        primary:
+            'flex justify-between items-center px-4 py-2 border-2 border-rose-400 rounded-full gap-10 bg-stone-100 font-semibold w-full z-10 hover:bg-rose-100 hover:cursor-pointer hover:underline hover:decoration-2 hover:decoration-dotted hover:underline-offset-8',
+    };
     const selectedTitleVariantStyling = titleVariantStyling[variant];
 
     const descriptionVariantStyling = {
-        'primary': "px-4 pt-14 pb-2 text-center bg-stone-100 border-2 border-rose-400 rounded-3xl -mt-12 w-full z-0",
-    }
-    const selectedDescriptionVariantStyling = descriptionVariantStyling[variant];
+        primary:
+            'px-4 pt-14 pb-2 text-center bg-stone-100 border-2 border-rose-400 rounded-3xl -mt-12 w-full z-0',
+    };
+    const selectedDescriptionVariantStyling =
+        descriptionVariantStyling[variant];
 
     return (
         <div className={`${selectedDivVariantStyling}`}>
-            <div className={`${selectedTitleVariantStyling}`} onClick={() => setIsDescriptionVisible(!isDescriptionVisible)}>
+            <div
+                className={`${selectedTitleVariantStyling}`}
+                onClick={() => setIsDescriptionVisible(!isDescriptionVisible)}
+            >
                 <span>{title}</span>
                 {description && (
-                    <Button onClick={() => setIsDescriptionVisible(!isDescriptionVisible)}>{isDescriptionVisible ? 'Hide' : 'Show'}</Button>
+                    <Button
+                        onClick={() =>
+                            setIsDescriptionVisible(!isDescriptionVisible)
+                        }
+                    >
+                        {isDescriptionVisible ? 'Hide' : 'Show'}
+                    </Button>
                 )}
             </div>
             {isDescriptionVisible && description && (
@@ -46,6 +57,6 @@ const BulletListEntry: React.FC<BulletListEntryProperties> = ({
             )}
         </div>
     );
-}
+};
 
 export default BulletListEntry;

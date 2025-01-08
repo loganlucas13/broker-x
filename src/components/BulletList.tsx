@@ -9,7 +9,7 @@ type BulletListProperties = {
     }[];
 };
 
-const BulletList: React.FC<BulletListProperties> = ( {entries}) => {
+const BulletList: React.FC<BulletListProperties> = ({ entries }) => {
     return (
         <div className="px-6 py-3 flex flex-col gap-2 border-2 border-rose-400 rounded-3xl bg-rose-50 w-1/2">
             {entries.map((entry, index) => (
@@ -17,11 +17,10 @@ const BulletList: React.FC<BulletListProperties> = ( {entries}) => {
                     key={index}
                     title={entry.title}
                     description={entry.description}
-                    >
-                </BulletListEntry>
+                ></BulletListEntry>
             ))}
         </div>
     );
-}
+};
 
 export default BulletList;

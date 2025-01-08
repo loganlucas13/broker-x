@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 // REQUIRED: 'children'
 // OPTIONAL: 'variant': (defaults to 'primary')
 // OPTIONAL: 'onClick': (defaults to 'void')
@@ -15,7 +14,7 @@ type ButtonProperties = {
     disabled?: boolean;
     to?: string;
     external?: string;
-}
+};
 
 const Button: React.FC<ButtonProperties> = ({
     variant = 'primary',
@@ -23,40 +22,47 @@ const Button: React.FC<ButtonProperties> = ({
     onClick,
     disabled = false,
     to,
-    external
+    external,
 }) => {
-
     const handleClick = () => {
         if (disabled) {
             return;
-        }
-        else if (onClick) {
+        } else if (onClick) {
             onClick();
         }
-    }
+    };
 
     // applied by default to all buttons
-    const defaultStyling = "px-4 py-2 rounded-full shadow focus:outline-none";
+    const defaultStyling = 'px-4 py-2 rounded-full shadow focus:outline-none';
 
     // list of all button variants available
     const variantStyling = {
-        primary: "bg-rose-400 text-rose-50 hover:text-rose-400 hover:bg-rose-300",
-        secondary: "bg-rose-100 text-rose-400 hover:text-rose-500 hover:bg-rose-200",
-        text: "text-rose-400 font-medium decoration-2 shadow-none hover:underline",
-        icon: "shadow-none rounded-none"
-    }
+        primary:
+            'bg-rose-400 text-rose-50 hover:text-rose-400 hover:bg-rose-300',
+        secondary:
+            'bg-rose-100 text-rose-400 hover:text-rose-500 hover:bg-rose-200',
+        text: 'text-rose-400 font-medium decoration-2 shadow-none hover:underline',
+        icon: 'shadow-none rounded-none',
+    };
     const selectedVariantStyling = variantStyling[variant];
 
-    const disabledStyling = disabled
-        ? "opacity-50 cursor-not-allowed"
-        : "";
+    const disabledStyling = disabled ? 'opacity-50 cursor-not-allowed' : '';
 
     const buttonContent = (
         <button
             className={`${defaultStyling} ${selectedVariantStyling} ${disabledStyling}`}
             onClick={handleClick}
             disabled={disabled}
-            style={variant === 'icon' ? { backgroundImage: `url(${children})`, backgroundSize: 'cover', height: '40px', width: '40px' } : {}}
+            style={
+                variant === 'icon'
+                    ? {
+                          backgroundImage: `url(${children})`,
+                          backgroundSize: 'cover',
+                          height: '40px',
+                          width: '40px',
+                      }
+                    : {}
+            }
         >
             {variant !== 'icon' ? children : null}
         </button>
@@ -68,15 +74,10 @@ const Button: React.FC<ButtonProperties> = ({
                 {buttonContent}
             </a>
         );
-    }
-    else if (to) {
-        return (
-            <Link to={to}>
-                {buttonContent}
-            </Link>
-        );
+    } else if (to) {
+        return <Link to={to}>{buttonContent}</Link>;
     }
     return buttonContent;
-}
+};
 
 export default Button;
