@@ -40,21 +40,29 @@ const BulletListEntry: React.FC<BulletListEntryProperties> = ({
                 onClick={() => setIsDescriptionVisible(!isDescriptionVisible)}
             >
                 <span>{title}</span>
-                {description && (
-                    <Button
-                        onClick={() =>
-                            setIsDescriptionVisible(!isDescriptionVisible)
-                        }
+                <div className="hover:no-underline">
+                    {description && (
+                        <Button
+                            onClick={() =>
+                                setIsDescriptionVisible(!isDescriptionVisible)
+                            }
+                        >
+                            {isDescriptionVisible ? 'Hide' : 'Show'}
+                        </Button>
+                    )}
+                </div>
+            </div>
+            <div>
+                {isDescriptionVisible && description && (
+                    <div
+                        className={`${selectedDescriptionVariantStyling} ${
+                            isDescriptionVisible ? 'animate-slide-down' : ''
+                        }`}
                     >
-                        {isDescriptionVisible ? 'Hide' : 'Show'}
-                    </Button>
+                        <span>{description}</span>
+                    </div>
                 )}
             </div>
-            {isDescriptionVisible && description && (
-                <div className={`${selectedDescriptionVariantStyling}`}>
-                    <span>{description}</span>
-                </div>
-            )}
         </div>
     );
 };
