@@ -3,13 +3,16 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Rubik';
-  src: url('../assets/fonts/Rubik-VariableFont_wght.ttf');
+    font-family: 'Rubik';
+    src: url('../assets/fonts/Rubik-VariableFont_wght.ttf');
 }
 
 body {
-  margin: 0;
-  font-family: 'Rubik';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: 'Rubik';
+    overflow: auto;
+    overscroll-behavior: contain;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }

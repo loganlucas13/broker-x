@@ -1,43 +1,58 @@
 {
-  "name": "broker-x",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^13.0.0",
-    "@testing-library/user-event": "^13.2.1",
-    "@types/jest": "^27.0.1",
-    "@types/node": "^16.7.13",
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-scripts": "5.0.1",
-    "typescript": "^4.4.2",
-    "web-vitals": "^2.1.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "broker-x",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "dependencies": {
+        "@sinclair/typebox": "^0.34.13",
+        "@testing-library/jest-dom": "^5.14.1",
+        "@testing-library/react": "^13.0.0",
+        "@testing-library/user-event": "^13.2.1",
+        "@types/jest": "^27.0.1",
+        "@types/node": "^16.7.13",
+        "@types/tough-cookie": "^4.0.5",
+        "alphavantage": "^2.5.0",
+        "dotenv": "^16.4.7",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-router-dom": "^7.1.1",
+        "react-scripts": "^5.0.1",
+        "tough-cookie": "^5.0.0",
+        "tough-cookie-file-store": "^2.0.3",
+        "typescript": "^4.4.2",
+        "web-vitals": "^2.1.0",
+        "yahoo-finance2": "^2.13.3"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@types/react": "^19.0.3",
+        "@types/react-dom": "^19.0.2",
+        "@types/react-router-dom": "^5.3.3",
+        "babel-loader": "^9.2.1",
+        "json-loader": "^0.5.7",
+        "ts-loader": "^9.5.1"
+    }
 }
