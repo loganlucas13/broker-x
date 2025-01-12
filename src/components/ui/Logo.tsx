@@ -3,7 +3,7 @@ import logoPath from '../../assets/images/logo.svg';
 
 // OPTIONAL: 'variant' (defaults to 'background')
 type LogoProperties = {
-    variant?: 'background' | 'noBackground' | 'icon';
+    variant?: 'background' | 'noBackground' | 'icon' | 'large';
 };
 
 const Logo: React.FC<LogoProperties> = ({ variant = 'background' }) => {
@@ -15,6 +15,7 @@ const Logo: React.FC<LogoProperties> = ({ variant = 'background' }) => {
             'px-4 py-2 bg-stone-100 border-2 border-rose-400 rounded-full',
         noBackground: '',
         icon: '',
+        large: '',
     };
     const selectedVariantStyling = variantStyling[variant];
 
@@ -27,10 +28,16 @@ const Logo: React.FC<LogoProperties> = ({ variant = 'background' }) => {
                 </span>
             </div>
         );
-    } else {
+    } else if (variant === 'icon') {
         return (
             <div className={`${defaultStyling}`}>
                 <img src={logoPath} alt="logo" width="40"></img>
+            </div>
+        );
+    } else {
+        return (
+            <div className={`${defaultStyling}`}>
+                <img src={logoPath} alt="logo" width="125"></img>
             </div>
         );
     }

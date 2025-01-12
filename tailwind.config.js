@@ -6,7 +6,7 @@ module.exports = {
             animation: {
                 shake: 'shake 0.5s ease-in-out',
                 'slide-down': 'slideDown 0.3s ease-out forwards',
-                'slide-up': 'slideUp 0.3s ease-in-out',
+                'bounce-horizontal': 'bounceHorizontal 1s infinite',
             },
             keyframes: {
                 shake: {
@@ -33,6 +33,25 @@ module.exports = {
                         transform: 'rotateX(0deg)',
                         transformOrigin: 'top',
                         opacity: '1',
+                    },
+                },
+
+                bounceHorizontal: {
+                    '0%, 100%': {
+                        transform: 'translateX(0)',
+                        animationTimingFunction: 'cubic-bezier(0.8, 0, 0.2, 1)',
+                    },
+                    '30%': {
+                        transform: 'translateX(-5%)',
+                        animationTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+                    },
+                    '50%': {
+                        transform: 'translateX(5%)',
+                        animationTimingFunction: 'cubic-bezier(0.2, 0, 0.4, 1)',
+                    },
+                    '70%': {
+                        transform: 'translateX(-5%)',
+                        animationTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
                     },
                 },
             },

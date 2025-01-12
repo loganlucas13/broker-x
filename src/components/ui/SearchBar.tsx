@@ -49,11 +49,13 @@ function SearchBar() {
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onKeyDown={handleKeyDown}
             ></input>
-            <Button
-                variant="icon"
-                children={rightArrow}
-                onClick={handleSearch}
-            ></Button>
+            <div className="hover:animate-bounce-horizontal">
+                <Button
+                    variant="icon"
+                    children={rightArrow}
+                    onClick={handleSearch}
+                ></Button>
+            </div>
         </div>
     );
 }

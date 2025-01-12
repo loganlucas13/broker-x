@@ -27,11 +27,13 @@ const Stock: React.FC<StockProperties> = ({
 
     return (
         <div
-            className={`${defaultStyling}`}
+            className={`${defaultStyling} group`}
             onClick={() => handleSearch(symbol)}
         >
             <span className="px-4 py-2">{`${name} (${symbol})`}</span>
-            <Button variant="icon" children={rightArrow}></Button>
+            <div className="hover:animate-bounce-horizontal group-hover:animate-bounce-horizontal">
+                <Button variant="icon" children={rightArrow}></Button>
+            </div>
         </div>
     );
 };

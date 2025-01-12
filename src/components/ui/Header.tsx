@@ -10,10 +10,10 @@ type HeaderProperties = {
 const Header: React.FC<HeaderProperties> = ({ variant = 'home' }) => {
     const variantContent = {
         home: <Button variant="primary" children="FAQ" to="/faq"></Button>,
-        faq: <Button variant="primary" children="Home" to="/"></Button>,
+        faq: <Button variant="primary" children="Home" to="/home"></Button>,
         analysis: (
             <div className="space-x-4">
-                <Button variant="primary" children="Home" to="/"></Button>
+                <Button variant="primary" children="Home" to="/home"></Button>
                 <Button variant="primary" children="FAQ" to="/faq"></Button>
             </div>
         ),
