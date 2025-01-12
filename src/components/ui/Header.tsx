@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from './Button';
 import Logo from './Logo';
-import githubLogo from '../assets/images/github.svg';
+import githubLogo from '../../assets/images/github.svg';
 
 type HeaderProperties = {
     variant?: 'home' | 'faq' | 'analysis';

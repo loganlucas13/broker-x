@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from './Button';
-import rightArrow from '../assets/images/right-arrow.svg';
+import rightArrow from '../../assets/images/right-arrow.svg';
 
 type StockProperties = {
     variant?: 'primary';

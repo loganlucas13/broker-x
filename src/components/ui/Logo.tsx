@@ -1,5 +1,5 @@
 import React from 'react';
-import logoPath from '../assets/images/logo.svg';
+import logoPath from '../../assets/images/logo.svg';
 
 // OPTIONAL: 'variant' (defaults to 'background')
 type LogoProperties = {

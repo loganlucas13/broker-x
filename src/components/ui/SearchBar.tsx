@@ -1,9 +1,9 @@
 import React, { KeyboardEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { formatStockSymbol } from '../assets/utils/format-stock-symbol';
+import { formatStockSymbol } from '../../assets/utils/format-stock-symbol';
 import Button from './Button';
-import searchIcon from '../assets/images/search.svg';
-import rightArrow from '../assets/images/right-arrow.svg';
+import searchIcon from '../../assets/images/search.svg';
+import rightArrow from '../../assets/images/right-arrow.svg';
 
 function SearchBar() {
     const [searchTerm, setSearchTerm] = useState('');

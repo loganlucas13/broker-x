@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './Header';
-import Label from './Label';
-import BulletList from './BulletList';
+import Header from '../ui/Header';
+import Label from '../ui/Label';
+import BulletList from '../ui/BulletList';
 
 function FAQ() {
     const faqEntries = [

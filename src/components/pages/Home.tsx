@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './Header';
-import SearchBar from './SearchBar';
-import StockList from './StockList';
+import Header from '../ui/Header';
+import SearchBar from '../ui/SearchBar';
+import StockList from '../ui/StockList';
 
 function Home() {
     return (

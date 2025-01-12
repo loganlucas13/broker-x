@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './Header';
-import Button from './Button';
+import Header from '../ui/Header';
+import Button from '../ui/Button';
 
 function Analysis() {
     return (
