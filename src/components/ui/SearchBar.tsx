@@ -37,7 +37,7 @@ function SearchBar() {
 
     return (
         <div
-            className={`flex flex-row border-2 p-2 rounded-full w-1/3 gap-4 border-rose-400 bg-rose-50 ${
+            className={`flex flex-row border-2 p-2 rounded-full w-1/3 gap-4 border-stone-600 bg-stone-100 ${
                 isInvalid ? shakeClass : ''
             }`}
         >
@@ -45,7 +45,7 @@ function SearchBar() {
             <input
                 type="search"
                 placeholder="Enter a stock to search (ex. AAPL)"
-                className="flex-grow border-b-2 border-rose-400 text-rose-400 text-bold bg-transparent placeholder:text-rose-400 placeholder:italic focus:outline-none"
+                className="flex-grow border-b-2 border-stone-600 text-stone-600 text-bold bg-transparent placeholder:text-stone-600 placeholder:italic focus:outline-none"
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onKeyDown={handleKeyDown}
             ></input>

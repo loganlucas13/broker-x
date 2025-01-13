@@ -38,10 +38,10 @@ const Button: React.FC<ButtonProperties> = ({
     // list of all button variants available
     const variantStyling = {
         primary:
-            'bg-rose-400 text-rose-50 hover:text-rose-400 hover:bg-rose-300',
+            'bg-stone-600 text-stone-50 hover:text-stone-600 hover:bg-stone-400',
         secondary:
-            'bg-rose-100 text-rose-400 hover:text-rose-500 hover:bg-rose-200',
-        text: 'text-rose-400 font-medium decoration-2 shadow-none hover:underline',
+            'bg-stone-100 text-stone-400 hover:text-stone-500 hover:bg-stone-200',
+        text: 'text-stone-600 font-medium decoration-2 shadow-none hover:underline',
         icon: 'shadow-none rounded-none',
     };
     const selectedVariantStyling = variantStyling[variant];
