@@ -1,19 +1,20 @@
 import React from 'react';
 import Button from './Button';
 import Logo from './Logo';
-import githubLogo from '../assets/images/github.svg';
+import githubLogo from '../../assets/images/github.svg';
 
 type HeaderProperties = {
-    variant?: 'home' | 'faq' | 'analysis';
+    variant?: 'startup' | 'home' | 'faq' | 'analysis';
 };
 
 const Header: React.FC<HeaderProperties> = ({ variant = 'home' }) => {
     const variantContent = {
+        startup: null,
         home: <Button variant="primary" children="FAQ" to="/faq"></Button>,
-        faq: <Button variant="primary" children="Home" to="/"></Button>,
+        faq: <Button variant="primary" children="Home" to="/home"></Button>,
         analysis: (
             <div className="space-x-4">
-                <Button variant="primary" children="Home" to="/"></Button>
+                <Button variant="primary" children="Home" to="/home"></Button>
                 <Button variant="primary" children="FAQ" to="/faq"></Button>
             </div>
         ),
@@ -21,8 +22,8 @@ const Header: React.FC<HeaderProperties> = ({ variant = 'home' }) => {
     const selectedVariantContent = variantContent[variant];
 
     return (
-        <div className="flex justify-between items-center px-24 py-4 bg-rose-50 rounded-b-3xl shadow-sm">
-            <Logo variant="background"></Logo>
+        <div className="flex justify-between items-center px-8 pt-4">
+            <Logo variant="icon"></Logo>
             <div className="flex items-center gap-6">
                 {selectedVariantContent}
                 <Button

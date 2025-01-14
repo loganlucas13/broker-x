@@ -11,7 +11,7 @@ type BulletListProperties = {
 
 const BulletList: React.FC<BulletListProperties> = ({ entries }) => {
     return (
-        <div className="px-6 py-3 flex flex-col gap-2 border-2 border-rose-400 rounded-3xl bg-rose-50 w-1/2">
+        <div className="px-6 py-3 flex flex-col gap-2 border-2 border-stone-600 rounded-3xl bg-stone-200 w-1/2">
             {entries.map((entry, index) => (
                 <BulletListEntry
                     key={index}
