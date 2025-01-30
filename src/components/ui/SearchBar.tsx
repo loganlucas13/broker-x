@@ -5,7 +5,11 @@ import Button from './Button';
 import searchIcon from '../../assets/images/search.svg';
 import rightArrow from '../../assets/images/right-arrow.svg';
 
-function SearchBar() {
+type SearchBarProperties = {
+    onError: () => void;
+};
+
+function SearchBar(props: SearchBarProperties) {
     const [searchTerm, setSearchTerm] = useState('');
     const [isInvalid, setIsInvalid] = useState(false);
     const [shakeClass, setShakeClass] = useState('');
@@ -21,6 +25,7 @@ function SearchBar() {
             setIsInvalid(true);
             setShakeClass('animate-shake');
             setTimeout(() => setShakeClass(''), 500);
+            props.onError();
             return;
         }
         setIsInvalid(false);
