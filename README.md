@@ -1,7 +1,4 @@
-<div style="display: flex; justify-content: center; gap: 5px; align-items: center; text-align: center;">
-    <img width="50" height="50" src="./public/logo.svg">
-    <h1 style="vertical-align: middle;">BrokerX</h1>
-</div>
+# BrokerX
 
 ###### NOTE: This project is currently in development, so some features may not function as intended
 
